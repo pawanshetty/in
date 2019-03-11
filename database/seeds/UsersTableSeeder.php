@@ -20,8 +20,8 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->delete();
 
         DB::table('users')->insert([
-            'name' => "Pawan",
-            'email' => 'pawanshetty@outlook.com',
+            'name' => "admin",
+            'email' => 'admin@gmail.com',
             'password' => bcrypt('secret'),
             'role_id' => 1
         ]);
