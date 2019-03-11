@@ -54,10 +54,7 @@ class GroupController extends Controller
         ]);
 
         $groups = $request->input('users');
-
-        //flatten if sent as multi dimensional array
-        $groups = new RecursiveIteratorIterator(new RecursiveArrayIterator($groups));
-
+        
         $this->groupService->storeGroup($request,$groups);
  
         return redirect('/groups')->with('success', 'Group has been created');
