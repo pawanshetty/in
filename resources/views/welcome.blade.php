@@ -77,11 +77,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    IN
+                    Users and Groups
                 </div>
 
                 <div class="links">
-                    Plugins utilised
+                    -Pawan Shetty
                 </div>
             </div>
         </div>
