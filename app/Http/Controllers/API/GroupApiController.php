@@ -104,7 +104,7 @@ class GroupApiController extends Controller
         
         try
         {
-            $this->groupService->updateGroup($request,$id);
+            $group = $this->groupService->updateGroup($request,$id);
         }
         catch(Exception $e)
         {

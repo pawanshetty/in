@@ -77,7 +77,7 @@ class UserApiController extends Controller
 
         try
         {
-            $this->userService->updateUser($request,$id);
+            $user = $this->userService->updateUser($request,$id);
         }
         catch(Exception $e)
         {

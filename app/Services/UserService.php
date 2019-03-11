@@ -80,6 +80,8 @@ class UserService{
             
             $user->groups()->sync($groups);
         });
+
+        return $user;
     
     }
 
