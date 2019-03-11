@@ -79,10 +79,9 @@ class UserService{
             $user->save();
             
             $user->groups()->sync($groups);
-        });
 
-        return $user;
-    
+            return $user;
+        });
     }
 
     public function deleteUser($id)

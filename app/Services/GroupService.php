@@ -79,9 +79,9 @@ class GroupService{
             $group->save();
 
             $group->users()->sync($users);
+            
+            return $group;
         });
-
-        return $group;
     }
     
     public function deleteGroup($id)
