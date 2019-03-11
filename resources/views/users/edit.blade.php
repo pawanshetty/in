@@ -30,7 +30,7 @@
                 </ul>
             </div><br />
             @endif
-            <form method="post" action="{{ route('users.update',$user->id) }}">
+            <form method="post" action="{{ route('users.update',$user->id) }}" enctype="multipart/form-data">
                 @method('PATCH')
                 @csrf
                 <div class="box-body ">
