@@ -76,6 +76,11 @@ class UserService{
             $user->email = $request->get('email') ?? $user->email;
             $user->role_id = $request->get('role');
             $user->password = $request->get('password') ? bcrypt($request->get('password')):$user->password;
+            
+            if ($request->has('avatar')) {
+                $user->addMediaFromRequest('avatar')->toMediaCollection('avatars');
+            }
+            
             $user->save();
             
             $user->groups()->sync($groups);
