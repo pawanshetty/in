@@ -20,7 +20,8 @@ class UserService{
         $user = new User([
             'name' => $request->get('name'),
             'email'=> $request->get('email'),
-            'password'=> bcrypt($request->get('password'))
+            'password'=> bcrypt($request->get('password')),
+            'role_id' => $request->get('role')
         ]);
 
         $groups = $request->input('groups');
@@ -73,6 +74,7 @@ class UserService{
             
             $user->name = $request->get('name') ?? $user->email;
             $user->email = $request->get('email') ?? $user->email;
+            $user->role_id = $request->get('role');
             $user->password = $request->get('password') ? bcrypt($request->get('password')):$user->password;
             $user->save();
             

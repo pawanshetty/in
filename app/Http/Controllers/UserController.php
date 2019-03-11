@@ -98,10 +98,20 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name'=>'required',
-            'email'=> 'required|email',
-          ]);
+        $user = User::find($id);
+
+        if($user->email != $request->input('email'))
+        {
+            $request->validate([
+                'name'=>'required',
+                'email'=> 'required|email|unique:users,email',
+              ]);
+        }else{
+            $request->validate([
+                'name'=>'required',
+                'email'=> 'required'
+              ]);
+        }
         
         $this->userService->updateUser($request,$id);
 

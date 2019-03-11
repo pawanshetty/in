@@ -25,7 +25,7 @@ class CheckRole{
         if($user->isAdmin()){
             return $next($request);
         }
-            
+
         foreach($roles as $role) {
             if($user->role->name == $role)
             {

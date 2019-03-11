@@ -50,8 +50,8 @@
                   
                     <div class="form-group">
                             <label>Select Role</label>
-                            <select class="form-control" >
-                            <option value="0" {{($user->role_id==0) ? "selected" :""}}>User</option>
+                            <select name="role" class="form-control" >
+                            <option value="2" {{($user->role_id==2) ? "selected" :""}}>User</option>
                             <option value="1" {{($user->role_id==1) ? "selected" :""}}>Admin</option>
                             </select>
                     </div>
